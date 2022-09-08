@@ -18,7 +18,6 @@ class consultarRefaccionesmodel extends Model
                 $item->refaccion_nombre = $row['refaccion_nombre'];
                 $item->refaccion_descripcion = $row['refaccion_descripcion'];
                 $item->refaccion_imagen = $row['refaccion_imagen'];
-
                 array_push($items, $item);
             }
             return $items;

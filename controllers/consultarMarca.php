@@ -14,20 +14,15 @@ class consultarMarca extends Controller{
 
     function verMarca($param = null){
         $idMarca = $param[0];
-
         $marcaa = $this->model->getById($idMarca);
-
         $this->view->varTodas=$marcaa;
-
         $this->view->render('consultarMarca/ActMarca');
 
 
     }
 
     function actualizarMarca(){
-
-                //modificar 
-
+        //modificar
         $id_marca=$_POST['codMarca'];
         $nombre_m = $_POST['NomMarca'];
          if($this->model->update(['codMarca' => $id_marca, 'NomMarca' => $nombre_m] )){
