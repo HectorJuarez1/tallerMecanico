@@ -17,8 +17,6 @@ class consultarMarca extends Controller{
         $marcaa = $this->model->getById($idMarca);
         $this->view->varTodas=$marcaa;
         $this->view->render('consultarMarca/ActMarca');
-
-
     }
 
     function actualizarMarca(){
@@ -30,9 +28,7 @@ class consultarMarca extends Controller{
              $marcaa = new varTodas();
              $marcaa->marca_id = $id_marca;
              $marcaa->marca_nombre = $nombre_m;
-
              $this->view->marcas = $marcaa;
-
              $this->view->mensaje = "Alumno actualizado correctamente";
          }else{
              // mensaje de error
@@ -47,7 +43,6 @@ class consultarMarca extends Controller{
          if($this->model->delete($marca)){
              $mensaje = "Marca eliminada correctamente";
          }else{
-
              $mensaje = "No se pudo eliminar la marca";
          }
          $this->view->mensaje = $mensaje;
