@@ -24,8 +24,6 @@ class nuevaRefaccion extends Controller{
 
     function registraRefaccion()
     {
-        //echo "registraRefaccion";
-         //$this->model->insertRefaccion();
         $datos[0] = trim($_POST['id_marca']);
         $datos[1] = trim($_POST['NomRefaccion']);
         $datos[2]  = trim($_POST['Descripcion']);

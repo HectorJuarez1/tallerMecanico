@@ -33,14 +33,14 @@
             <tbody>
               <?php foreach ($this->varTodas as $row) {
 
-$marca = new varTodas();
-$marca = $row;
- $ruta="public/img/".$marca->refaccion_imagen;
+                $marca = new varTodas();
+                $marca = $row;
+                $ruta = "public/img/" . $marca->refaccion_imagen;
               ?>
                 <tr>
                   <td class="text-center"><?php echo $marca->refaccion_nombre; ?></td>
                   <td class="text-center"><?php echo $marca->refaccion_descripcion; ?></td>
-                  <td class="text-center"> <a href="<?php echo $ruta; ?>" target="_blank"><img src="<?php echo $ruta ; ?>"width="25%"> </a></td>
+                  <td class="text-center"> <a href="<?php echo $ruta; ?>" target="_blank"><img src="<?php echo $ruta; ?>"width="25%"> </a></td>
                 </tr>
               <?php }
               ?>
