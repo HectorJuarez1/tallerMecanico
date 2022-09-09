@@ -19,7 +19,7 @@
     </div>
 
     <div class="row">
-    <div class="col-lg-10"></div>
+        <div class="col-lg-10"></div>
         <div class="col-lg-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -28,9 +28,9 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="<?php echo constant('URL'); ?>nuevaRefaccion/registraRefaccion" method="POST">
+                            <form action="<?php echo constant('URL'); ?>nuevaRefaccion/registraRefaccion" method="POST" enctype="multipart/form-data>
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control" name="id_marca" required  value="<?php echo $this->varTodas->marca_id; ?>"> <br>
+                                    <input type="hidden" class="form-control" name="id_marca" required value="<?php echo $this->varTodas->marca_id; ?>"> <br>
                                     <label>Marca de Auto</label>
                                     <input type="text" class="form-control" name="NomMarca" required disabled value="<?php echo $this->varTodas->marca_nombre; ?>"><br>
                                     <label>Nombre Refaccion</label>
@@ -39,7 +39,8 @@
                                     <input type="text" class="form-control" name="Descripcion" required><br>
                                     <label>Imagen</label>
                                     <input type="text" class="form-control" name="NomImg" required><br>
-                                    <input class="btn btn-success" type="submit"  onClick="AletRegistrar(1)" value="Registrar">
+                                    <input type="file" name="filename" required>
+                                    <input class="btn btn-success" type="submit" onClick="AletRegistrar(1)" value="Registrar">
                                 </div>
                             </form>
                         </div>
