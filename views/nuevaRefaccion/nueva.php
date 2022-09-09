@@ -28,7 +28,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="<?php echo constant('URL'); ?>nuevaRefaccion/registraRefaccion" method="POST" enctype="multipart/form-data>
+                            <form action="<?php echo constant('URL'); ?>nuevaRefaccion/registraRefaccion" method="POST" enctype="multipart/form-data" accept=".png, .jpg, .jpeg, .webp">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control" name="id_marca" required value="<?php echo $this->varTodas->marca_id; ?>"> <br>
                                     <label>Marca de Auto</label>
@@ -38,8 +38,8 @@
                                     <label>Descripcion</label>
                                     <input type="text" class="form-control" name="Descripcion" required><br>
                                     <label>Imagen</label>
-                                    <input type="text" class="form-control" name="NomImg" required><br>
-                                    <input type="file" name="filename" required>
+                                    <input type="file" class="form-control"  name="filename" required>
+                                    <br>
                                     <input class="btn btn-success" type="submit" onClick="AletRegistrar(1)" value="Registrar">
                                 </div>
                             </form>

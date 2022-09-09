@@ -44,7 +44,7 @@ class nuevaRefaccionmodel extends Model{
         try{
            $query = $this->db->connect()->prepare('INSERT INTO refaccion(marca_id,refaccion_nombre, refaccion_descripcion, refaccion_imagen)
                                                    VALUES(:mid,:rnom,:rdes,:rnimg)');
-           $query->execute(['mid' => $datos['id_marca'],'rnom' => $datos['NomRefaccion'],'rdes' => $datos['Descripcion'],'rnimg' => $datos['NomImg']]);
+           $query->execute(['mid' => $datos['id_marca'],'rnom' => $datos['NomRefaccion'],'rdes' => $datos['Descripcion'],'rnimg' => $datos['filename']]);
            return true;
        }catch(PDOException $e){
           // echo $e->getMessage();

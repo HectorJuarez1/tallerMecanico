@@ -1,6 +1,6 @@
 <?php
 
-define('URL', 'http://localhost:8084/Taller_Mecanico/');
+define('URL', 'http://localhost:8084/tallerMecanicoDasc/');
 define('HOST', 'localhost');
 define('DB', 'tallerbd');
 define('USER', 'root');
