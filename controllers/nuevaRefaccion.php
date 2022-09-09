@@ -29,7 +29,7 @@ class nuevaRefaccion extends Controller{
         $datos[2]  = trim($_POST['Descripcion']);
         $datos[3]=$_FILES['filename']['name']; // obtiene el nombre
         $archivotm=$_FILES['filename']['tmp_name']; // obtiene el archiv
-        $ruta ='public/img/';
+        $ruta ='public/img/Refacciones/';
         move_uploaded_file($archivotm,$ruta.$datos[3]);
         $mensaje = "";
         if ($this->model->insertRefaccion([

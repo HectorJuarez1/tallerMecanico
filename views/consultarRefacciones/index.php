@@ -35,7 +35,7 @@
 
                 $marca = new varTodas();
                 $marca = $row;
-                $ruta = "public/img/" . $marca->refaccion_imagen;
+                $ruta = "public/img/Refacciones/" . $marca->refaccion_imagen;
               ?>
                 <tr>
                   <td class="text-center"><?php echo $marca->refaccion_nombre; ?></td>
