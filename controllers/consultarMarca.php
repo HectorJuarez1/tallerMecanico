@@ -28,13 +28,13 @@ class consultarMarca extends Controller{
              $marcaa = new varTodas();
              $marcaa->marca_id = $id_marca;
              $marcaa->marca_nombre = $nombre_m;
-             $this->view->marcas = $marcaa;
-             $this->view->mensaje = "Alumno actualizado correctamente";
+             $this->view->varTodas = $marcaa;
+             $this->view->mensaje = "";
          }else{
              // mensaje de error
              $this->view->mensaje = "No se pudo actualizar el alumno";
          }
-         $this->view->render('consultarMarca/ActMarca');
+     $this->render();
 
     }
 

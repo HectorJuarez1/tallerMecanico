@@ -48,10 +48,11 @@ class ConsultarMarcaModel extends Model
         try{
             $query->execute([
                 'id_marca'=> $item['codMarca'],
-                'marca_nombre'=> $item['NomMarca']
+                'nombre_marca'=> $item['NomMarca']
             ]);
             return true;
         }catch(PDOException $e){
+            echo $e->getMessage();
             return false;
         }
     }

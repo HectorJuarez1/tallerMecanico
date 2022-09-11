@@ -17,8 +17,7 @@ class nuevaCotizacion extends Controller{
         $datos[3] = trim($_POST['CostoTotal']);
 
          if($this->model->insert(['NomCliente' => $datos[0],'Descripcion_coche' => $datos[1],'Fecha' => $datos[2],'CostoTotal' => $datos[3]])){
-            $mensaje = 'Registrado';
-         }else{
+            $mensaje = "";
             $mensaje = "No registrado";
          }
         $this->view->mensaje = $mensaje;

@@ -22,34 +22,40 @@ class nuevaProveedorRefaccionmodel extends Model{
              return [];
          }
      }
-// muestra proveddor
      public function getById($id){
         $item = new varTodas();
 
-        $query = $this->db->connect()->prepare("SELECT * FROM proveedor WHERE proveedor_id = :proveedor_id");
+        $query = $this->db->connect()->prepare("SELECT RR.refaccion_id,PP.proveedor_id,PP.proveedor_nombre
+                                          FROM refaccion RR inner join proveedor PP
+                                             ON RR.refaccion_id =PP.proveedor_id where RR.refaccion_id=:refaccion_id");
         try{
-            $query->execute(['marca_id' => $id]);
+            $query->execute(['refaccion_id' => $id]);
 
             while($row = $query->fetch()){
-                $item->proveedor_id = $row['proveedor_id'];
+                $item->refaccion_id = $row['refaccion_id'];
                 $item->refaccion_nombre = $row['refaccion_nombre'];
+                $item->proveedor_id = $row['proveedor_id'];
+                $item->proveedor_nombre = $row['proveedor_nombre'];
             }
             return $item;
         }catch(PDOException $e){
             return null;
         }
     }
-//modificar
+
     public function insertProveedorRefaccion($datos){
         try{
-           $query = $this->db->connect()->prepare('INSERT INTO refaccion(marca_id,refaccion_nombre, refaccion_descripcion, refaccion_imagen)
-                                                   VALUES(:mid,:rnom,:rdes,:rnimg)');
-           $query->execute(['mid' => $datos['id_marca'],'rnom' => $datos['NomRefaccion'],'rdes' => $datos['Descripcion'],'rnimg' => $datos['NomImg']]);
+           $query = $this->db->connect()->prepare('INSERT INTO refaccion_proveedor(id_refaccion,id_proveedor, fecha_solicitud, precio)
+                                                   VALUES(:idf,:idp,:fecha,:precio)');
+           $query->execute(['idf' => $datos['id_provedor'],'idp' => $datos['id_proveedor'],'fecha' => $datos['Fecha'],'precio' => $datos['Precio']]);
            return true;
        }catch(PDOException $e){
-          // echo $e->getMessage();
+          echo $e->getMessage();
            return false;
        }
     }
+
+
+
 
 }

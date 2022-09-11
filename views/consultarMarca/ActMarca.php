@@ -13,6 +13,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">ACTUALIZAR MARCA</h1>
+            <div class="center"><?php echo $this->mensaje; ?></div>
         </div>
     </div>
     <div class="row">
@@ -27,7 +28,7 @@
                             <form action="<?php echo constant('URL'); ?>consultarMarca/actualizarMarca" method="POST">
                                 <div class="form-group">
                                 <label>Codigo Marca</label>
-                                    <input type="text" class="form-control" disabled name="codMarca" value="<?php echo $this->varTodas->marca_id; ?>" required><br>
+                                    <input type="text" class="form-control" name="codMarca" value="<?php echo $this->varTodas->marca_id; ?>" required><br>
                                     <label>Nombre de la marca</label>
                                     <input type="text" class="form-control" name="NomMarca" value="<?php echo $this->varTodas->marca_nombre; ?>" required><br>
                                     <input class="btn btn-warning" type="submit"   value="Actualizar Datos">

@@ -21,20 +21,21 @@ class nuevaProveedorRefaccion extends Controller{
         $this->view->render('nuevaProveedorRefaccion/nueva');
 
     }
+    
 
-    function registraRefaccion()
+    function registraProveedorRefaccion()
     {
         //echo "registraRefaccion";
          //$this->model->insertRefaccion();
-        $datos[0] = trim($_POST['id_provedor']);
-        $datos[1] = trim($_POST['NomProveedor']);
+        $datos[0] = trim($_POST['refaccion_id']);
+        $datos[1] = trim($_POST['id_proveedor']);
         $datos[2]  = trim($_POST['Fecha']);
         $datos[3]  = trim($_POST['Precio']);
         $mensaje = "";
         if ($this->model->insertProveedorRefaccion([
-            'id_marca' => $datos[0], 'NomRefaccion' => $datos[1], 'Descripcion' => $datos[2],'NomImg' => $datos[3]
+            'id_provedor' => $datos[0], 'id_proveedor' => $datos[1], 'Fecha' => $datos[2],'Precio' => $datos[3]
         ])) {
-            $mensaje = "Nueva refaccion registrado";
+            $mensaje = "";
         } else {
             $mensaje = "Esta refaccion ya existente";
         }

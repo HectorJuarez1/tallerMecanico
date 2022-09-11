@@ -28,11 +28,12 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="<?php echo constant('URL'); ?>nuevaRefaccion/registraRefaccion" method="POST">
+                            <form action="<?php echo constant('URL'); ?>nuevaProveedorRefaccion/registraProveedorRefaccion" method="POST">
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control" name="id_provedor" required  value="<?php echo $this->varTodas->id_provedor; ?>"> <br>
-                                    <label>Proveedor</label>
-                                    <input type="text" class="form-control" name="NomProveedor" required disabled value="<?php echo $this->varTodas->marca_nombre; ?>"><br>
+                                <label>refaccion_id</label>
+                                    <input type="text" class="form-control" name="refaccion_id" required  value="<?php echo $this->varTodas->refaccion_id; ?>"> <br>
+                                    <label>id Proveedor</label>
+                                    <input type="text" class="form-control" name="id_proveedor" required  value="<?php echo $this->varTodas->proveedor_id; ?>"><br>
                                     <label>Fecha</label>
                                     <input type="date" class="form-control" name="Fecha" required><br>
                                     <label>Precio</label>
