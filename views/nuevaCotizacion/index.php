@@ -12,6 +12,8 @@
     <?php require 'views/header.php'; ?>
     <div class="row">
         <div class="col-lg-12">
+        <div class="center"><?php echo $this->mensaje; ?>
+    </div>
             <h1 class="page-header"><i class="fa fa-newspaper-o"></i> NUEVA COTIZACION</h1>
         </div>
     </div>
@@ -34,7 +36,7 @@
                                     <input type="date" class="form-control" name="Fecha" required><br>
                                     <label>Costo Total</label>
                                     <input type="number" class="form-control" name="CostoTotal" required><br>
-                                    <input class="btn btn-success" type="submit"  onClick="AletRegistrar(1)" value="Registrar">
+                                    <input class="btn btn-success" type="submit" value="Registrar">
                                 </div>
                             </form>
                         </div>
