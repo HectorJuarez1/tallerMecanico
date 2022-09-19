@@ -40,7 +40,7 @@
                 <tr>
                   <td class="text-center"><?php echo $marca->refaccion_nombre; ?></td>
                   <td class="text-center"><?php echo $marca->refaccion_descripcion; ?></td>
-                  <td class="text-center"> <a href="<?php echo $ruta; ?>" target="_blank"><img src="<?php echo $ruta; ?>"width="25%"> </a></td>
+                  <td class="text-center"> <a href="<?php echo $ruta; ?>" target="_blank"><img src="<?php echo $ruta; ?>" class="img-thumbnail" > </a></td>
                 </tr>
               <?php }
               ?>
