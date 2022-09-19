@@ -10,6 +10,7 @@
 
 <body>
     <?php require 'views/header.php'; ?>
+    <div class="center"><?php $this->showMessages(); ?></div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">NUEVA MARCA</h1>
@@ -29,7 +30,7 @@
                                 <div class="form-group">
                                     <label>Nombre de la marca</label>
                                     <input type="text" class="form-control" name="NomMarca" required><br>
-                                    <input class="btn btn-success" type="submit"  onClick="AletRegistrar(1)" value="Registrar">
+                                    <input class="btn btn-success" type="submit"  value="Registrar">
                                 </div>
                             </form>
                         </div>

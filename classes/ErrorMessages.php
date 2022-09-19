@@ -2,7 +2,7 @@
 
 class ErrorMessages{
 
-    const ERROR_NOREGISTRADO                  = "1fdce";
+    const ERROR_NOREGISTRADO    = "1fdce";
 
     private $errorsList = [];
 
@@ -10,7 +10,6 @@ class ErrorMessages{
     {
         $this->errorsList = [
             ErrorMessages::ERROR_NOREGISTRADO => "Dato no registrado",
-      
         ];
     }
 
@@ -26,4 +25,3 @@ class ErrorMessages{
         }
     }
 }
-?>

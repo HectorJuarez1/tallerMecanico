@@ -4,7 +4,6 @@ class nuevoProveedor extends Controller{
 
     function __construct(){
         parent::__construct();
-        $this->view->mensaje = "";
     }
     function render(){
         $this->view->render('nuevoProveedor/index');
@@ -17,11 +16,10 @@ class nuevoProveedor extends Controller{
         $datos[4]    = trim($_POST['CorreoE']);
         $mensaje = "";
         if($this->model->insertproveedor(['Nomproveedor' => $datos[0], 'Direccion' => $datos[1], 'Telefono1' => $datos[2], 'Telefono2' => $datos[3], 'CorreoE' => $datos[4]])){
-            $mensaje = "Nuevo proveedor registrado";
+            $this->redirect('nuevoProveedor', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         }else{
-            $mensaje = "Proveedor existente";
+            $this->redirect('nuevoProveedor', ['error' => ErrorMessages::ERROR_NOREGISTRADO]);
         }
-        $this->view->mensaje = $mensaje;
-        $this->render();
+
     }
 }

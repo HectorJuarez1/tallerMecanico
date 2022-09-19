@@ -8,10 +8,9 @@
     
     <title>NuevoProveedor</title>
 </head>
-
 <body>
     <?php require 'views/header.php'; ?>
-    <div class="center"><?php echo $this->mensaje; ?></div>
+    <div class="center"><?php $this->showMessages(); ?></div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">NUEVO PROVEEDOR</h1>
@@ -38,7 +37,7 @@
                                     <input type="number" class="form-control" name="Telefono2" required><br>
                                     <label>Correo Electronico</label>
                                     <input type="email" class="form-control" name="CorreoE" required><br>
-                                    <input class="btn btn-success" type="submit"  onClick="AletRegistrar(1)" value="Registrar">
+                                    <input class="btn btn-success" type="submit"  value="Registrar">
                                 </div>
                             </form>
                         </div>

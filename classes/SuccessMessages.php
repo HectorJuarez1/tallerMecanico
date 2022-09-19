@@ -1,27 +1,27 @@
 <?php
+class SuccessMessages
+{
+    const SUCCESS_CONFIRMATION = '8281e';
 
-class SuccessMessages{
-
-    const SUCCESS_CONFIRMATION       = "8281e";
-    
     private $successList = [];
 
     public function __construct()
     {
         $this->successList = [
-
-            SuccessMessages::SUCCESS_CONFIRMATION => "Registro Ingresado."
+            SuccessMessages::SUCCESS_CONFIRMATION => 'Registro Ingresado.',
         ];
     }
 
-    function get($hash){
+    function get($hash)
+    {
         return $this->successList[$hash];
     }
 
-    function existsKey($key){
-        if(array_key_exists($key, $this->successList)){
+    function existsKey($key)
+    {
+        if (array_key_exists($key, $this->successList)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

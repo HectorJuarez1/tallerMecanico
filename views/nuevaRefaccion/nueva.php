@@ -10,14 +10,12 @@
 
 <body>
     <?php require 'views/header.php'; ?>
-    <div class="center"><?php echo $this->mensaje; ?></div>
 
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">NUEVA REFACCION</h1>
         </div>
     </div>
-
     <div class="row">
         <div class="col-lg-10"></div>
         <div class="col-lg-10">
@@ -40,7 +38,7 @@
                                     <label>Imagen</label>
                                     <input type="file" class="form-control"  name="filename" required>
                                     <br>
-                                    <input class="btn btn-success" type="submit" onClick="AletRegistrar(1)" value="Registrar">
+                                    <input class="btn btn-success" type="submit" value="Registrar">
                                 </div>
                             </form>
                         </div>

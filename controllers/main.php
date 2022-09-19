@@ -1,6 +1,4 @@
 <?php
-
-
 class Main extends Controller{
 
     function __construct(){
@@ -9,9 +7,6 @@ class Main extends Controller{
     function render(){
         $this->view->render('main/index');
     }
-
-
-
 }
 
 ?>
