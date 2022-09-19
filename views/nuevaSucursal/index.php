@@ -9,9 +9,8 @@
 </head>
 
 <body>
-    <?php require 'views/header.php'; ?>
-    <div class="center"><?php echo $this->mensaje; ?></div>
-
+<?php require 'views/header.php'; ?>
+<div class="center"><?php $this->showMessages(); ?>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">NUEVA SUCURSAL</h1>
@@ -27,12 +26,13 @@
                             <form action="<?php echo constant('URL'); ?>nuevaSucursal/registrarSucursal" method="POST">
                                 <div class="form-group">
                                     <label>Proveedor</label>
-                                    <select class="form-control" name="id_proS">
+                                    <select class="form-control" name="id_proS" required>
                                         <option selected>Abrir este menú de selección</option>
                                         <?php foreach ($this->marcas as $row) {
                                             $marca = new varTodas();
                                             $marca = $row; ?>
-                                            <option value="<?php echo $marca->proveedor_id; ?>"><?php echo $marca->proveedor_nombre; ?></option>
+                                            <option value="<?php echo $marca->proveedor_id; ?>">
+                                                <?php echo $marca->proveedor_nombre; ?></option>
                                         <?php } ?>
                                     </select><br>
                                     <label>Nombre Sucursal</label>
@@ -45,7 +45,7 @@
                                     <input type="number" class="form-control" name="Telefono2S" required><br>
                                     <label>Correo Electronico</label>
                                     <input type="email" class="form-control" name="CorreoEs" required><br>
-                                    <input class="btn btn-success" type="submit"  onClick="AletRegistrar(1)" value="Registrar">
+                                    <button class="btn btn-success" type="submit"  name="RegistrarSucursal">Registrar</button>
                                 </div>
                             </form>
                         </div>

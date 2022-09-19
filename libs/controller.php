@@ -16,6 +16,20 @@ class Controller{
             $this->model = new $modelName();
         }
     }
+    function redirect($url, $mensajes = []){
+        $data = [];
+        $params = '';
+        
+        foreach ($mensajes as $key => $mensajes) {
+            array_push($data, $key . '=' . $mensajes);
+        }
+        $params = join('&', $data);
+        
+        if($params != ''){
+            $params = '?' . $params;
+        }
+        header('location: ' . constant('URL') . $url .'/'. $params);
+    }
 }
 
 

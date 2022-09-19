@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Taller</title>
+    
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css" rel="stylesheet" />
 
