@@ -12,12 +12,15 @@ class  View{
     }
     
     private function handleMessages(){
-        if(isset($_GET['success']) && isset($_GET['error'])){
+        if(isset($_GET['success']) && isset($_GET['error'])&& isset($_GET['warning'])){
             // no se muestra nada porque no puede haber un error y success al mismo tiempo
         }else if(isset($_GET['success'])){
             $this->handleSuccess();
         }else if(isset($_GET['error'])){
             $this->handleError();
+        }
+        else if(isset($_GET['warning'])){
+            $this->handleWarning();
         }
     }
 
@@ -45,10 +48,22 @@ class  View{
             }
         }
     }
+    private function handleWarning(){
+        if(isset($_GET['warning'])){
+            $hash = $_GET['warning'];
+            $warning = new WarningMessages();
+            if($warning->existsKey($hash)){
+                $this->d['warning'] = $warning->get($hash);
+            }else{
+                $this->d['warning'] = NULL;
+            }
+        }
+    }
 
     public function showMessages(){
         $this->showError();
         $this->showSuccess();
+        $this->showWarning();
     }
 
     public function showError(){
@@ -56,7 +71,7 @@ class  View{
             echo '
             <div class="col-lg-10">
             <div class="alert alert-danger alert-dismissible">
-            Sucursal  ' . ' <b> ' . $this->d['error']. ' </b> ' . '   
+             ' . ' <b> ' . $this->d['error']. ' </b> ' . '   
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             </div></div>
             ';
@@ -69,6 +84,17 @@ class  View{
             <div class="col-lg-10">
             <div class="alert alert-success alert-dismissible">
              ' . ' <b> ' . $this->d['success']. ' </b> ' . '   
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            </div></div>
+            ';
+        }
+    }
+    public function showWarning(){
+        if(array_key_exists('warning', $this->d)){
+            echo '
+            <div class="col-lg-10">
+            <div class="alert alert-warning alert-dismissible">
+             ' . ' <b> ' . $this->d['warning']. ' </b> ' . '   
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             </div></div>
             ';

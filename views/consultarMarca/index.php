@@ -11,14 +11,12 @@
 
 <body>
   <?php require 'views/header.php'; ?>
-
-  <h1>SECCIÓN DE CONSULTA</h1>
-  <hr class="my-4">
-  <div class="center"><?php echo $this->mensaje; ?></div>
-  <?php //var_dump($this->marcas);
-  ?>
-
-  <div class="col-lg-12">
+  <div class="center"><?php $this->showMessages(); ?></div>
+  <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">SECCIÓN DE CONSULTA</h1>
+        </div>
+    </div>
     <div class="panel panel-success">
       <div class="panel-heading">
         Datos Existentes
@@ -50,24 +48,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <?php require 'views/footer.php'; ?>
   <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>

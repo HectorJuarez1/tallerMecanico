@@ -10,10 +10,10 @@
 
 <body>
     <?php require 'views/header.php'; ?>
+    <div class="center"><?php $this->showMessages(); ?></div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">ACTUALIZAR MARCA</h1>
-            <div class="center"><?php echo $this->mensaje; ?></div>
         </div>
     </div>
     <div class="row">

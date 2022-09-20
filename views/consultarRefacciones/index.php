@@ -14,7 +14,7 @@
 
   <h1>SECCIÓN DE CONSULTA</h1>
   <hr class="my-4">
-  <div class="center"><?php echo $this->mensaje; ?></div>
+  <div class="center">
   <div class="col-lg-12">
     <div class="panel panel-success">
       <div class="panel-heading">

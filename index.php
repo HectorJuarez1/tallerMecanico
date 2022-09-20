@@ -7,6 +7,7 @@ require_once 'libs/app.php';
 
 require_once 'classes/ErrorMessages.php';
 require_once 'classes/SuccessMessages.php';
+require_once 'classes/WarningMessages.php';
 
 require_once 'config/config.php';
 

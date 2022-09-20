@@ -2,6 +2,7 @@
 class SuccessMessages
 {
     const SUCCESS_CONFIRMATION = '8281e';
+    const SUCCESS_CONFIRMATION_ACT= '82c41';
 
     private $successList = [];
 
@@ -9,6 +10,7 @@ class SuccessMessages
     {
         $this->successList = [
             SuccessMessages::SUCCESS_CONFIRMATION => 'Registro Ingresado.',
+            SuccessMessages::SUCCESS_CONFIRMATION_ACT => 'Datos Actualizados Correcta Mente.',
         ];
     }
 

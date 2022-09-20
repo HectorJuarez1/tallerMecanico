@@ -3,9 +3,8 @@ class consultarMarca extends Controller{
     function __construct(){
         parent::__construct();
         $this->view->varTodas=[];
-        $this->view->mensaje = "";
     }
-
+    
     function render(){
         $marcas =$this->model->get();
         $this->view->varTodas=$marcas;
@@ -29,10 +28,9 @@ class consultarMarca extends Controller{
              $marcaa->marca_id = $id_marca;
              $marcaa->marca_nombre = $nombre_m;
              $this->view->varTodas = $marcaa;
-             $this->view->mensaje = "";
+             $this->redirect('consultarMarca', ['success' => SuccessMessages::SUCCESS_CONFIRMATION_ACT]);
          }else{
-             // mensaje de error
-             $this->view->mensaje = "No se pudo actualizar el alumno";
+             $this->redirect('consultarMarca', ['warning' => WarningMessages::ADVERTENCIA_NOREGISTRADO]);
          }
      $this->render();
 
@@ -41,13 +39,10 @@ class consultarMarca extends Controller{
     function eliminarMarca($param = null){
         $marca = $param[0];
          if($this->model->delete($marca)){
-             $mensaje = "Marca eliminada correctamente";
+            $this->redirect('consultarMarca', ['error' => ErrorMessages::ERROR_ELIMINAR]);
          }else{
-             $mensaje = "No se pudo eliminar la marca";
+             $this->redirect('consultarMarca', ['warning' => WarningMessages::ADVERTENCIA_NOREGISTRADO]);
          }
-         $this->view->mensaje = $mensaje;
-         header('Location: ' . $_SERVER['HTTP_REFERER']);
-         //$this->render();
-        // echo $mensaje;
+
      }
 }
