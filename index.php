@@ -11,6 +11,8 @@ require_once 'classes/WarningMessages.php';
 
 require_once 'config/config.php';
 
+require_once 'public/fpdf/fpdf.php';
+
 $app = new App();
 
 ?>

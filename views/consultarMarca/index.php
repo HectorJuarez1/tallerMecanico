@@ -49,6 +49,8 @@
       </div>
     </div>
 
+    <a class="btn btn-success" href="<?php echo constant('URL') . 'consultarMarca/DescargaPdf' ?>" role="button">Descargar PDF</a>
+
   <?php require 'views/footer.php'; ?>
   <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
 
