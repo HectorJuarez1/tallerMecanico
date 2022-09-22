@@ -69,7 +69,7 @@ class  View{
     public function showError(){
         if(array_key_exists('error', $this->d)){
             echo '
-            <div class="col-lg-10">
+            <div class="col-lg-12">
             <div class="alert alert-danger alert-dismissible">
              ' . ' <b> ' . $this->d['error']. ' </b> ' . '   
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -81,7 +81,7 @@ class  View{
     public function showSuccess(){
         if(array_key_exists('success', $this->d)){
             echo '
-            <div class="col-lg-10">
+            <div class="col-lg-12">
             <div class="alert alert-success alert-dismissible">
              ' . ' <b> ' . $this->d['success']. ' </b> ' . '   
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -92,7 +92,7 @@ class  View{
     public function showWarning(){
         if(array_key_exists('warning', $this->d)){
             echo '
-            <div class="col-lg-10">
+            <div class="col-lg-12">
             <div class="alert alert-warning alert-dismissible">
              ' . ' <b> ' . $this->d['warning']. ' </b> ' . '   
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
