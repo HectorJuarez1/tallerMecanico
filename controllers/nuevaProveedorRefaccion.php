@@ -5,8 +5,10 @@ class nuevaProveedorRefaccion extends Controller{
     function __construct(){
         parent::__construct();
         $this->view->varTodas=[];
-        $this->view->mensaje = "";
+        $this->view->varToda2=[];
     }
+
+
 
     function render(){
         $varTodas =$this->model->get();
@@ -21,7 +23,16 @@ class nuevaProveedorRefaccion extends Controller{
         $this->view->render('nuevaProveedorRefaccion/nueva');
 
     }
-    
+
+    function renderpro(){
+        $varToda2 =$this->model->getProveedor();
+        $this->view->varToda2=$varToda2;
+        $this->view->render('nnuevaProveedorRefaccion/nueva');
+    }
+
+
+
+
 
     function registraProveedorRefaccion()
     {

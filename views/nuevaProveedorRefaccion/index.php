@@ -32,6 +32,7 @@
               <?php foreach ($this->varTodas as $row) {
                 $marca = new varTodas();
                 $marca = $row;
+                echo $marca->proveedor_id;
               ?>
                 <tr>
                   <td class="text-center">

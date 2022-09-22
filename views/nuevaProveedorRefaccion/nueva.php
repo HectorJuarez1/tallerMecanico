@@ -10,7 +10,13 @@
 
 <body>
     <?php require 'views/header.php'; ?>
-    <div class="center"><?php echo $this->mensaje; ?></div>
+    <div class="center"><?php 
+
+
+
+
+
+    ?></div>
 
     <div class="row">
         <div class="col-lg-12">
@@ -31,9 +37,9 @@
                             <form action="<?php echo constant('URL'); ?>nuevaProveedorRefaccion/registraProveedorRefaccion" method="POST">
                                 <div class="form-group">
                                 <label>refaccion_id</label>
-                                    <input type="text" class="form-control" name="refaccion_id" required  value="<?php echo $this->varTodas->refaccion_id; ?>"> <br>
+                                    <input type="text" class="form-control" name="refaccion_id" required  value="<?php    echo $this->varTodas->refaccion_id;   ?>"> <br>
                                     <label>id Proveedor</label>
-                                    <input type="text" class="form-control" name="id_proveedor" required  value="<?php echo $this->varTodas->proveedor_id; ?>"><br>
+                                    <input type="text" class="form-control" name="id_proveedor" required  value="<?php  ?>"><br>
                                     <label>Fecha</label>
                                     <input type="date" class="form-control" name="Fecha" required><br>
                                     <label>Precio</label>
