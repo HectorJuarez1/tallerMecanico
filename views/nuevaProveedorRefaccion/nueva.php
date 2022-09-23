@@ -10,22 +10,13 @@
 
 <body>
     <?php require 'views/header.php'; ?>
-    <div class="center"><?php 
-
-
-
-
-
-    ?></div>
-
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">NUEVA REFACCION</h1>
         </div>
     </div>
-
     <div class="row">
-    <div class="col-lg-12"></div>
+        <div class="col-lg-12"></div>
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -36,15 +27,23 @@
                         <div class="col-lg-12">
                             <form action="<?php echo constant('URL'); ?>nuevaProveedorRefaccion/registraProveedorRefaccion" method="POST">
                                 <div class="form-group">
-                                <label>refaccion_id</label>
-                                    <input type="text" class="form-control" name="refaccion_id" required  value="<?php    echo $this->varTodas->refaccion_id;   ?>"> <br>
-                                    <label>id Proveedor</label>
-                                    <input type="text" class="form-control" name="id_proveedor" required  value="<?php  ?>"><br>
+                                    <label>refaccion_id</label>
+                                    <input type="text" class="form-control" name="refaccion_id" required value="<?php echo $this->varTodas->refaccion_id;   ?>"> <br>
+                                    <label>Proveedor</label>
+                                    <select class="form-control" name="id_proveedor" required>
+                                        <option selected>Abrir este menú de selección</option>
+                                        <?php foreach ($this->provvedorCom as $row) {
+                                            $marca = new varTodas();
+                                            $marca = $row; ?>
+                                            <option value="<?php echo $marca->proveedor_id; ?>">
+                                                <?php echo $marca->proveedor_nombre; ?></option>
+                                        <?php } ?>
+                                    </select><br>
                                     <label>Fecha</label>
                                     <input type="date" class="form-control" name="Fecha" required><br>
                                     <label>Precio</label>
-                                    <input type="number" class="form-control" name="Precio" required><br>
-                                    <input class="btn btn-success" type="submit"  onClick="AletRegistrar(1)" value="Registrar">
+                                    <input  class="form-control" name="Precio"  type="number" step="any" required><br>
+                                    <input class="btn btn-success" type="submit" value="Registrar">
                                 </div>
                             </form>
                         </div>

@@ -1,58 +1,45 @@
 <?php
 
-class nuevaProveedorRefaccion extends Controller{
+class nuevaProveedorRefaccion extends Controller
+{
 
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
-        $this->view->varTodas=[];
-        $this->view->varToda2=[];
     }
 
-
-
-    function render(){
-        $varTodas =$this->model->get();
-        $this->view->varTodas=$varTodas;
+    function render()
+    {
+        $varTodas = $this->model->get();
+        $this->view->varTodas = $varTodas;
         $this->view->render('nuevaProveedorRefaccion/index');
     }
 
-    function verIdRefaccion($param = null){
+    function verIdRefaccion($param = null)
+    {
         $idMarca = $param[0];
         $marcaa = $this->model->getById($idMarca);
-        $this->view->varTodas=$marcaa;
+        $this->view->varTodas = $marcaa;
+
+        $Proveedor = $this->model->getProveedor();
+        $this->view->provvedorCom = $Proveedor;
+
         $this->view->render('nuevaProveedorRefaccion/nueva');
-
     }
-
-    function renderpro(){
-        $varToda2 =$this->model->getProveedor();
-        $this->view->varToda2=$varToda2;
-        $this->view->render('nnuevaProveedorRefaccion/nueva');
-    }
-
-
-
-
 
     function registraProveedorRefaccion()
     {
-        //echo "registraRefaccion";
-         //$this->model->insertRefaccion();
         $datos[0] = trim($_POST['refaccion_id']);
         $datos[1] = trim($_POST['id_proveedor']);
         $datos[2]  = trim($_POST['Fecha']);
         $datos[3]  = trim($_POST['Precio']);
         $mensaje = "";
         if ($this->model->insertProveedorRefaccion([
-            'id_provedor' => $datos[0], 'id_proveedor' => $datos[1], 'Fecha' => $datos[2],'Precio' => $datos[3]
+            'id_provedor' => $datos[0], 'id_proveedor' => $datos[1], 'Fecha' => $datos[2], 'Precio' => $datos[3]
         ])) {
-            $mensaje = "";
+            $this->redirect('nuevaProveedorRefaccion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } else {
-            $mensaje = "Esta refaccion ya existente";
+            $this->redirect('nuevaProveedorRefaccion', ['error' => ErrorMessages::ERROR_NOREGISTRADO]);
         }
-        $this->view->mensaje = $mensaje;
-        $this->render();
     }
-
-
 }

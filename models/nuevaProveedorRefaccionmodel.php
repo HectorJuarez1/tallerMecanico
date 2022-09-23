@@ -1,5 +1,6 @@
 <?php
 include_once 'models/varTodas.php';
+
 class nuevaProveedorRefaccionmodel extends Model{
 
     public function __construct(){
@@ -26,7 +27,8 @@ class nuevaProveedorRefaccionmodel extends Model{
      
     
     public function getProveedor()
-    { $items = [];
+    { 
+        $items = [];
         try{
              $query = $this->db->connect()->query("SELECT proveedor_id,proveedor_nombre FROM proveedor ORDER BY proveedor_id;");
              while($row = $query->fetch()){
@@ -60,17 +62,17 @@ class nuevaProveedorRefaccionmodel extends Model{
     }
 
 
-    // public function insertProveedorRefaccion($datos){
-    //     try{
-    //        $query = $this->db->connect()->prepare('INSERT INTO refaccion_proveedor(id_refaccion,id_proveedor, fecha_solicitud, precio)
-    //                                                VALUES(:idf,:idp,:fecha,:precio)');
-    //        $query->execute(['idf' => $datos['id_provedor'],'idp' => $datos['id_proveedor'],'fecha' => $datos['Fecha'],'precio' => $datos['Precio']]);
-    //        return true;
-    //    }catch(PDOException $e){
-    //       echo $e->getMessage();
-    //        return false;
-    //    }
-    // }
+    public function insertProveedorRefaccion($datos){
+        try{
+           $query = $this->db->connect()->prepare('INSERT INTO refaccion_proveedor(id_refaccion,id_proveedor, fecha_solicitud, precio)
+                                                   VALUES(:idf,:idp,:fecha,:precio)');
+           $query->execute(['idf' => $datos['id_provedor'],'idp' => $datos['id_proveedor'],'fecha' => $datos['Fecha'],'precio' => $datos['Precio']]);
+           return true;
+       }catch(PDOException $e){
+          echo $e->getMessage();
+           return false;
+       }
+    }
 
 
 
