@@ -13,43 +13,47 @@
   <?php require 'views/header.php'; ?>
   <div class="center"><?php $this->showMessages(); ?></div>
   <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">SECCIÓN DE CONSULTA</h1>
-        </div>
+    <div class="col-lg-12">
+      <h1 class="page-header">SECCIÓN DE CONSULTA</h1>
     </div>
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        Datos Existentes
-      </div>
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-            <thead>
-              <tr>
-                <th class="text-center">Codigo Marca</th>
+  </div>
+  <br>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      DataTable Example
+    </div>
+ 
+    <div class="card-body">
+      <table id="datatablesSimple">
+        <thead>
+          <tr>
+          <th class="text-center">Codigo Marca</th>
                 <th class="text-center">Nombre</th>
                 <th class="text-center">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($this->varTodas as $row) {
-                $marca = new varTodas();
-                $marca = $row;
-              ?>
-                <tr>
-                  <td class="text-center"><?php echo $marca->marca_id; ?></td>
-                  <td class="text-center"><?php echo $marca->marca_nombre; ?></td>
-                  <td class="text-center"><a href="<?php echo constant('URL') . 'consultarMarca/verMarca/' . $marca->marca_id ?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a><a href="<?php echo constant('URL') . 'consultarMarca/eliminarMarca/' . $marca->marca_id ?>" class="btn btn-danger"><i class="fa  fa-trash-o"></i></a></td>
-                </tr>
-              <?php }
-              ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+          </tr>
+        </thead>
 
-    <a class="btn btn-success" href="<?php echo constant('URL') . 'consultarMarca/DescargaPdf' ?>" role="button">Descargar PDF</a>
+        <tbody>
+          <?php foreach ($this->varTodas as $row) {
+            $marca = new varTodas();
+            $marca = $row;
+          ?>
+            <tr>
+              <td class="text-center"><?php echo $marca->marca_id; ?></td>
+              <td class="text-center"><?php echo $marca->marca_nombre; ?></td>
+              <td class="text-center"><a href="<?php echo constant('URL') . 'consultarMarca/verMarca/' . $marca->marca_id ?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a href="<?php echo constant('URL') . 'consultarMarca/eliminarMarca/' . $marca->marca_id ?>" class="btn btn-danger"><i class="fa  fa-trash-o"></i></a>
+              </td>
+            </tr>
+          <?php }?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <a class="btn btn-success" href="<?php echo constant('URL') . 'consultarMarca/DescargaPdf' ?>" role="button">Descargar PDF</a>
 
   <?php require 'views/footer.php'; ?>
   <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
