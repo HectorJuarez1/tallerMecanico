@@ -15,14 +15,16 @@
   <h1>SECCIÓN DE CONSULTA</h1>
   <hr class="my-4">
   <div class="center"><?php echo $this->mensaje; ?></div>
-  <div class="col-lg-12">
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        Datos Existentes
-      </div>
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      DataTable Example
+    </div>
+ 
+    <div class="card-body">
+      <table id="datatablesSimple">
+
             <thead>
               <tr>
                 <th class="text-center">Nombre</th>
@@ -47,11 +49,13 @@
               <?php }
               ?>
             </tbody>
-          </table>
-        </div>
-      </div>
+            </table>
     </div>
   </div>
+
+
+
+
   <?php require 'views/footer.php'; ?>
   <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
 

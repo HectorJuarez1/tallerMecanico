@@ -34,7 +34,6 @@
                 <th class="text-center">Acciones</th>
           </tr>
         </thead>
-
         <tbody>
           <?php foreach ($this->varTodas as $row) {
             $marca = new varTodas();
@@ -44,7 +43,7 @@
               <td class="text-center"><?php echo $marca->marca_id; ?></td>
               <td class="text-center"><?php echo $marca->marca_nombre; ?></td>
               <td class="text-center"><a href="<?php echo constant('URL') . 'consultarMarca/verMarca/' . $marca->marca_id ?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                <a href="<?php echo constant('URL') . 'consultarMarca/eliminarMarca/' . $marca->marca_id ?>" class="btn btn-danger"><i class="fa  fa-trash-o"></i></a>
+                <a href="<?php echo constant('URL') . 'consultarMarca/eliminarMarca/' . $marca->marca_id ?>" class="btn btn-danger"><i class="fa  fa-trash"></i></a>
               </td>
             </tr>
           <?php }?>

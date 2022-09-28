@@ -16,14 +16,16 @@
       <h1 class="page-header">NUEVA REFACCION</h1>
     </div>
   </div>
-  <div class="col-lg-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Datos Existentes
-      </div>
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+  
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      DataTable Example
+    </div>
+ 
+    <div class="card-body">
+      <table id="datatablesSimple">
             <thead>
               <tr>
                 <th class="text-center">MARCA</th>
@@ -46,11 +48,11 @@
                 <?php
               } ?>
             </tbody>
-          </table>
-        </div>
-      </div>
+            </table>
     </div>
   </div>
+
+
   <?php require 'views/footer.php'; ?>
 </body>
 
