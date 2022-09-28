@@ -26,13 +26,14 @@ class nuevaRefaccion extends Controller{
         $datos[0] = trim($_POST['id_marca']);
         $datos[1] = trim($_POST['NomRefaccion']);
         $datos[2]  = trim($_POST['Descripcion']);
-        $datos[3]=$_FILES['filename']['name']; // obtiene el nombre
+        $datos[3]  = trim($_POST['Precio']);
+        $datos[4]=$_FILES['filename']['name']; // obtiene el nombre
         $archivotm=$_FILES['filename']['tmp_name']; // obtiene el archiv
         $ruta ='public/img/Refacciones/';
-        move_uploaded_file($archivotm,$ruta.$datos[3]);
+        move_uploaded_file($archivotm,$ruta.$datos[4]);
 
         if ($this->model->insertRefaccion([
-            'id_marca' => $datos[0], 'NomRefaccion' => $datos[1], 'Descripcion' => $datos[2],'filename' => $datos[3]
+            'id_marca' => $datos[0], 'NomRefaccion' => $datos[1], 'Descripcion' => $datos[2], 'Precio' => $datos[3],'filename' => $datos[4]
         ])) {
             $this->redirect('nuevaRefaccion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } else {

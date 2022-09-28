@@ -16,29 +16,16 @@
             <h1 class="page-header">NUEVA MARCA</h1>
         </div>
     </div>
+    <hr class="my-3 mb-1">
     <div class="row">
-
-        <div class="col-lg-12">
-             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Datos Requeridos
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form action="<?php echo constant('URL'); ?>nuevaMarca/registrarMarca" method="POST">
-                                <div class="form-group">
-                                    <label>Nombre de la marca</label>
-                                    <input type="text" class="form-control" name="NomMarca" required><br>
-                                    <input class="btn btn-success" type="submit"  value="Registrar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+        <form class="row g-3" action="<?php echo constant('URL'); ?>nuevaMarca/registrarMarca" method="POST">
+            <div class="col-12">
+                <label>Nombre de la marca</label>
+                <input type="text" class="form-control" name="NomMarca" required>
             </div>
-        </div>
+            <input class="btn btn-success" type="submit" value="Registrar">
+
+        </form>
     </div>
     <?php require 'views/footer.php'; ?>
 </body>

@@ -4,149 +4,117 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Taller</title>
-    
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- MetisMenu CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/metisMenu.min.css" rel="stylesheet" />
-
-    <!-- Timeline CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/timeline.css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/startmin.css" rel="stylesheet" />
-
-    <!-- Morris Charts CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/morris.css" rel="stylesheet" />
-
-    <!-- Custom Fonts -->
-    <link href="<?php echo constant('URL'); ?>public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-
-    <!-- DataTables CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="<?php echo constant('URL'); ?>public/css/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <!-- sweetalert2 CSS -->
-    <link href="<?php echo constant('URL'); ?>public/sweetalert/dist/sweetalert2.min.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="<?php echo constant('URL'); ?>public/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="<?php echo constant('URL'); ?>main">TALLAR MECANICO</a>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="<?php echo constant('URL'); ?>main">TALLER MECANICO</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+
+
             </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="<?php echo constant('URL'); ?>main">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
 
-            <!-- button de responsi -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+                        <a class="nav-link" href="<?php echo constant('URL'); ?>nuevaCotizacion">
+                            <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
+                            Cotizaciones
+                        </a>
 
-            <!-- Top Navigation: Right Menu -->
-            <ul class="nav navbar-right navbar-top-links">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> hector.coyotl
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                        <a class="nav-link" href="<?php echo constant('URL'); ?>nuevaProveedorRefaccion">
+                            <div class="sb-nav-link-icon"><i class="fas fa-hammer"></i></div>
+                            Refaccion Proveedor
+                        </a>
 
-            <!-- Sidebar -->
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search..." />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="<?php echo constant('URL'); ?>nuevaCotizacion"><i class="fa fa-edit fa-fw"></i> Cotizaciones</a>
-                        </li>
-                        <li>
-                        <a href="<?php echo constant('URL'); ?>nuevaProveedorRefaccion"><i class="fa  fa-balance-scale fa-fw"></i> Refaccion Proveedor</a>
+                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Proveedores" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
+                            Proveedores
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="Proveedores" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>nuevoProveedor">Nuevo</a>
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>consultarProveedor">Consultar</a>
+                            </nav>
+                        </div>
 
-                                </li>
-                        <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Proveedores<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>nuevoProveedor">Nuevo</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>consultarProveedor">Consultar</a>
-                                </li>
-      
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa  fa-male fa-fw"></i> Sucursales<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>nuevaSucursal">Nuevo</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>consultarSucursales">Consultar</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-cogs fa-fw"></i> Refacciones<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>nuevaRefaccion">Nueva</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>consultarRefacciones">Consultar</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-taxi"></i> Marcas Autos<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>nuevaMarca">Nuevo</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo constant('URL'); ?>consultarMarca">Consultar</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Sucursales" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-building"></i></div>
+                            Sucursales
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="Sucursales" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>nuevaSucursal">Nuevo</a>
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>consultarSucursales">Consultar</a>
+                            </nav>
+                        </div>
 
-                    </ul>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Refacciones" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tools"></i></div>
+                            Refacciones
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="Refacciones" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>nuevaRefaccion">Nuevo</a>
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>consultarRefacciones">Consultar</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#MarcasAutos" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-car"></i></div>
+                            Marcas Autos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="MarcasAutos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>nuevaMarca">Nuevo</a>
+                                <a class="nav-link" href="<?php echo constant('URL'); ?>consultarMarca">Consultar</a>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <br>
 
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <br>

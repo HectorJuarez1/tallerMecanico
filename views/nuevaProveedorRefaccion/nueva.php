@@ -12,48 +12,40 @@
     <?php require 'views/header.php'; ?>
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">NUEVA REFACCION</h1>
+            <h1 class="page-header">NUEVA REFACCION PROVEEDOR</h1>
         </div>
     </div>
+    <hr class="my-3 mb-1">
     <div class="row">
-        <div class="col-lg-12"></div>
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Datos Requeridos
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form action="<?php echo constant('URL'); ?>nuevaProveedorRefaccion/registraProveedorRefaccion" method="POST">
-                                <div class="form-group">
-                                    <label>refaccion_id</label>
-                                    <input type="text" class="form-control" name="refaccion_id" required value="<?php echo $this->varTodas->refaccion_id;   ?>"> <br>
-                                    <label>Proveedor</label>
-                                    <select class="form-control" name="id_proveedor" required>
-                                        <option selected>Abrir este menú de selección</option>
-                                        <?php foreach ($this->provvedorCom as $row) {
-                                            $marca = new varTodas();
-                                            $marca = $row; ?>
-                                            <option value="<?php echo $marca->proveedor_id; ?>">
-                                                <?php echo $marca->proveedor_nombre; ?></option>
-                                        <?php } ?>
-                                    </select><br>
-                                    <label>Fecha</label>
-                                    <input type="date" class="form-control" name="Fecha" required><br>
-                                    <label>Precio</label>
-                                    <input  class="form-control" name="Precio"  type="number" step="any" required><br>
-                                    <input class="btn btn-success" type="submit" value="Registrar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <form class="row g-3" action="<?php echo constant('URL'); ?>nuevaProveedorRefaccion/registraProveedorRefaccion" method="POST">
+        <div class="col-md-6">
+            <label>refaccion_id</label>
+            <input type="text" class="form-control" name="refaccion_id" required value="<?php echo $this->varTodas->refaccion_id;   ?>">
         </div>
-    </div>
-    <?php require 'views/footer.php'; ?>
+        <div class="col-md-6">
+            <label>Proveedor</label>
+            <select class="form-control" name="id_proveedor" required>
+                <option selected>Abrir este menú de selección</option>
+                <?php foreach ($this->provvedorCom as $row) {
+                    $marca = new varTodas();
+                    $marca = $row; ?>
+                    <option value="<?php echo $marca->proveedor_id; ?>">
+                        <?php echo $marca->proveedor_nombre; ?></option>
+                <?php } ?>
+            </select></div>
+            <div class="col-6">
+            <label>Fecha</label>
+            <input type="date" class="form-control" name="Fecha" required>
+            </div>
+            <div class="col-6">
+            <label>Precio</label>
+            <input class="form-control" name="Precio" type="number" step="any" required>
+            </div>
+            <input class="btn btn-success" type="submit" value="Registrar">
+
+        </form>
+
+        <?php require 'views/footer.php'; ?>
 </body>
 
 </html>

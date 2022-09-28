@@ -70,9 +70,9 @@ class  View{
         if(array_key_exists('error', $this->d)){
             echo '
             <div class="col-lg-12">
-            <div class="alert alert-danger alert-dismissible">
+            <div class="alert alert-danger alert-dismissible role="alert"">
              ' . ' <b> ' . $this->d['error']. ' </b> ' . '   
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div></div>
             ';
         }
@@ -82,11 +82,16 @@ class  View{
         if(array_key_exists('success', $this->d)){
             echo '
             <div class="col-lg-12">
-            <div class="alert alert-success alert-dismissible">
+            <div class="alert alert-success alert-dismissible role="alert">
              ' . ' <b> ' . $this->d['success']. ' </b> ' . '   
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div></div>
             ';
+
+
+
+         
+            
         }
     }
     public function showWarning(){
@@ -95,7 +100,7 @@ class  View{
             <div class="col-lg-12">
             <div class="alert alert-warning alert-dismissible">
              ' . ' <b> ' . $this->d['warning']. ' </b> ' . '   
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div></div>
             ';
         }

@@ -1,39 +1,25 @@
-</div>
-</div>
-</div>
+                                  
+                    </div>
+                </main>
+               
+            </div>
+        </div>
 
-<!-- jQuery -->
-<script src="<?php echo constant('URL'); ?>public/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo constant('URL'); ?>public/js/metisMenu.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="<?php echo constant('URL'); ?>public/js/startmin.js"></script>
-
-<!-- DataTables JavaScript -->
-<script src="<?php echo constant('URL'); ?>public/js/dataTables/jquery.dataTables.min.js"></script>
-<script src="<?php echo constant('URL'); ?>public/js/dataTables/dataTables.bootstrap.min.js"></script>
-
-<!-- sweetalert2 JavaScript -->
-<script src="<?php echo constant('URL'); ?>public/sweetalert/dist/sweetalert2.all.min.js"></script>
-<script src="<?php echo constant('URL'); ?>public/js/mensajes.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+        </script>
 
 
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true,
-            language: {
-                url: 'public/js/Spanish.json'
-            }
-        });
-    });
-</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo constant('URL'); ?>public/assets/demo/chart-area-demo.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/datatables-simple-demo.js"></script>
+
+        
 <script>
             //Autoclose
             window.setTimeout(function() {

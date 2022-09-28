@@ -1,6 +1,8 @@
 <?php
 
 class varTodas{
+
+
     //marca
     public $marca_id;
     public $marca_nombre;
@@ -11,6 +13,7 @@ class varTodas{
     public $refaccion_nombre;
     public $refaccion_descripcion;
     public $refaccion_imagen;
+    public $precio;
 
     //sucursal_prov
     public $proveedor_id;

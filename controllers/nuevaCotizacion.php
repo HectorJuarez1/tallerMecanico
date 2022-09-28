@@ -4,23 +4,62 @@ class nuevaCotizacion extends Controller
     function __construct()
     {
         parent::__construct();
+
     }
-    function render()
-    {
+
+    function render(){
+        $marcas =$this->model->get();
+        $this->view->varTodas=$marcas;
         $this->view->render('nuevaCotizacion/index');
     }
+
+
+    function AgregarProducto(){
+        $datos[0] = trim($_POST['Codigo']);
+        $idRefaccion = $datos[0];
+        $Ref = $this->model->getByIdR($idRefaccion);
+        $this->view->varTodas=$Ref;
+        $this->view->render('nuevaCotizacion/AgregarProductos');        
+    }
+
+
     function registrarCotizacion()
     {
-        $datos[0] = trim($_POST['NomCliente']);
-        $datos[1]  = trim($_POST['Descripcion_coche']);
-        $datos[2]  = trim($_POST['Fecha']);
-        $datos[3] = trim($_POST['CostoTotal']);
+        $datos[0] = trim($_POST['Fecha']);
+        $datos[1]  = trim($_POST['txt_NombreCliente']);
+        $datos[2]  = trim($_POST['txt_Telefono']);
+        $datos[3] = trim($_POST['txt_Correo']);
+        $datos[4] = trim($_POST['cbx_Marca']);
+        $datos[5]  = trim($_POST['txt_Modelo']);
+        $datos[6]  = trim($_POST['txt_Anio']);
+        $datos[7]  = trim($_POST['txt_DescripcionAuto']);
 
-        if ($this->model->insert(['NomCliente' => $datos[0], 'Descripcion_coche' => $datos[1], 'Fecha' => $datos[2], 'CostoTotal' => $datos[3]])) {
+        if ($this->model->insert(['Fecha' => $datos[0], 
+                                'txt_NombreCliente' => $datos[1], 
+                                'txt_Telefono' => $datos[2], 
+                                'txt_Correo' => $datos[3],
+                                'cbx_Marca' => $datos[4],
+                                'txt_Modelo' => $datos[5],
+                                'txt_Anio' => $datos[6],
+                                'txt_DescripcionAuto' => $datos[7]
+                                ])) {
             $this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } 
         else {
             $this->redirect('nuevaCotizacion', ['error' => ErrorMessages::ERROR_NOREGISTRADO]);
         }
     }
+
+    public function AgregaR($param = null){
+        $marca = $param[0];
+    
+        $id_marca= $_POST['txt_cantidad_r'];
+
+        echo "hola ".$id_marca.$marca;
+
+    }
+
+    
+
+
 }
