@@ -20,7 +20,7 @@
         <form class="row g-3" action="<?php echo constant('URL'); ?>nuevaProveedorRefaccion/registraProveedorRefaccion" method="POST">
         <div class="col-md-6">
             <label>refaccion_id</label>
-            <input type="text" class="form-control" name="refaccion_id" required value="<?php echo $this->varTodas->refaccion_id;   ?>">
+            <input type="text" class="form-control" name="refaccion_id" required  readonly value="<?php echo $this->varTodas->refaccion_id;   ?>">
         </div>
         <div class="col-md-6">
             <label>Proveedor</label>

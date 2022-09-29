@@ -22,7 +22,7 @@
   <div class="card mb-4">
     <div class="card-header">
       <i class="fas fa-table me-1"></i>
-      DataTable Example
+      Registros
     </div>
  
     <div class="card-body">
@@ -42,7 +42,7 @@
             <tr>
               <td class="text-center"><?php echo $marca->marca_id; ?></td>
               <td class="text-center"><?php echo $marca->marca_nombre; ?></td>
-              <td class="text-center"><a href="<?php echo constant('URL') . 'consultarMarca/verMarca/' . $marca->marca_id ?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+              <td class="text-center"><a href="<?php echo constant('URL') . 'consultarMarca/verMarca/' . $marca->marca_id ?>" class="btn btn-warning"><i class='fa fa-pencil' style='color: white'></i></a>
                 <a href="<?php echo constant('URL') . 'consultarMarca/eliminarMarca/' . $marca->marca_id ?>" class="btn btn-danger"><i class="fa  fa-trash"></i></a>
               </td>
             </tr>
@@ -55,7 +55,7 @@
   <a class="btn btn-success" href="<?php echo constant('URL') . 'consultarMarca/DescargaPdf' ?>" role="button">Descargar PDF</a>
 
   <?php require 'views/footer.php'; ?>
-  <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
+
 
 </body>
 

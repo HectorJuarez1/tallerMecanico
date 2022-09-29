@@ -15,20 +15,21 @@
     <div class="col-lg-12">
       <h1 class="page-header">REFACCION - PROVEEDOR</h1>
     </div>
-  </div>
-  <div class="col-lg-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Datos Existentes
-      </div>
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-            <thead>
-              <tr>
-                <th class="text-center">REFACCIONE</th>
-              </tr>
-            </thead>
+  </div><br>
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Registros
+    </div>
+    <div class="card-body">
+      <table id="datatablesSimple">
+        <thead>
+          <tr>
+          <th class="text-center">REFACCIONES</th>
+  
+          </tr>
+        </thead>
+
             <tbody>
               <?php foreach ($this->varTodas as $row) {
                 $marca = new varTodas();
@@ -39,14 +40,14 @@
                   <td class="text-center">
                     <a class="btn btn-success" href="<?php echo constant('URL') . 'nuevaProveedorRefaccion/verIdRefaccion/' . $marca->refaccion_id ?>" role="button"><?php echo $marca->refaccion_nombre; ?></a>
                   </td>
-                <?php }
-                ?>
+                <?php }?>
             </tbody>
-          </table>
-        </div>
-      </div>
+            </table>
     </div>
   </div>
+
+
+
   <?php require 'views/footer.php'; ?>
 </body>
 </html>

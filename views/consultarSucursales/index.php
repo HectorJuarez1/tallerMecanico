@@ -19,7 +19,7 @@
   <div class="card mb-4">
     <div class="card-header">
       <i class="fas fa-table me-1"></i>
-      DataTable Example
+      Registros
     </div>
  
     <div class="card-body">
@@ -29,8 +29,8 @@
               <tr>
                 <th class="text-center">Nombre</th>
                 <th class="text-center">Direccion</th>
-                <th class="text-center">Tel 1</th>
-                <th class="text-center">Tel 2</th>
+                <th class="text-center">Telefono 1</th>
+                <th class="text-center">Telefono 2</th>
                 <th class="text-center">Correo</th>
               </tr>
             </thead>
@@ -52,13 +52,7 @@
             </table>
     </div>
   </div>
-
-
-
-
   <?php require 'views/footer.php'; ?>
-  <script src="<?php echo constant('URL'); ?>public/js/main.js"></script>
-
 </body>
 
 </html>

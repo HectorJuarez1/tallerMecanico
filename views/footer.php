@@ -13,6 +13,19 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="<?php echo constant('URL'); ?>public/js/datatables-simple-demo.js"></script>
         
+<!-- Idioma -->
+        <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true,
+            language: {
+                url: 'public/js/Spanish.json'
+            }
+        });
+    });
+</script>
+
+
 <script>
             //Autoclose
             window.setTimeout(function() {
