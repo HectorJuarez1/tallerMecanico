@@ -25,6 +25,11 @@ class nuevaCotizacion extends Controller
 
     function registrarCotizacion()
     {
+
+        session_start();
+        $_SESSION["Num_Pedido"]=htmlentities($_POST['txt_NUM_cotizacion']);
+
+        
         $datos[0] = trim($_POST['Fecha']);
         $datos[1]  = trim($_POST['txt_NombreCliente']);
         $datos[2]  = trim($_POST['txt_Telefono']);
@@ -33,6 +38,7 @@ class nuevaCotizacion extends Controller
         $datos[5]  = trim($_POST['txt_Modelo']);
         $datos[6]  = trim($_POST['txt_Anio']);
         $datos[7]  = trim($_POST['txt_DescripcionAuto']);
+        $datos[8]=$_SESSION['Num_Pedido'];
 
         if ($this->model->insert(['Fecha' => $datos[0], 
                                 'txt_NombreCliente' => $datos[1], 
@@ -41,9 +47,11 @@ class nuevaCotizacion extends Controller
                                 'cbx_Marca' => $datos[4],
                                 'txt_Modelo' => $datos[5],
                                 'txt_Anio' => $datos[6],
-                                'txt_DescripcionAuto' => $datos[7]
+                                'txt_DescripcionAuto' => $datos[7],
+                                'Num_Pedido'=>  $datos[8]
                                 ])) {
-            $this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
+                                                $this->redirect('AgregarRefacciones/Buscar');
+            //$this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } 
         else {
             $this->redirect('nuevaCotizacion', ['error' => ErrorMessages::ERROR_NOREGISTRADO]);

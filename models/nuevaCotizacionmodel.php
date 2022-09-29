@@ -37,6 +37,7 @@ class nuevaCotizacionmodel extends Model
                 $item->refaccion_nombre = $row['refaccion_nombre'];
                 $item->refaccion_descripcion = $row['refaccion_descripcion'];
                 $item->precio = $row['precio'];
+                $item->refaccion_imagen = $row['refaccion_imagen'];
             }
             return $item;
         }catch(PDOException $e){
@@ -48,8 +49,8 @@ class nuevaCotizacionmodel extends Model
     public function insert($datos)
     {
         try {
-            $query = $this->db->connect()->prepare('INSERT INTO cotizacion(cotizacion_fecha, nombre_cliente, numero_telefono, correo_electronico, marca_id, modelo_auto, anio_auto, descripcion) VALUES 
-                                                    (:Fecha,:Nombre,:Numtelefono,:Correo,:Marca,:Modelo,:annio_a,:Descripcion_a)');
+            $query = $this->db->connect()->prepare('INSERT INTO cotizacion(cotizacion_fecha, nombre_cliente, numero_telefono, correo_electronico, marca_id, modelo_auto, anio_auto, descripcion,num_pedido) VALUES 
+                                                    (:Fecha,:Nombre,:Numtelefono,:Correo,:Marca,:Modelo,:annio_a,:Descripcion_a,:nump)');
             $query->execute([
                 'Fecha' => $datos['Fecha'],
                 'Nombre' => $datos['txt_NombreCliente'],
@@ -58,7 +59,8 @@ class nuevaCotizacionmodel extends Model
                 'Marca' => $datos['cbx_Marca'],
                 'Modelo' => $datos['txt_Modelo'],
                 'annio_a' => $datos['txt_Anio'],
-                'Descripcion_a' => $datos['txt_DescripcionAuto']
+                'Descripcion_a' => $datos['txt_DescripcionAuto'],
+                'nump' => $datos['Num_Pedido'],
             ]);
 
             return true;

@@ -32,16 +32,14 @@
         <tbody>
           <?php foreach ($this->varTodas as $row) {
 
-            $marca = new varTodas();
-            $marca = $row;
-          ?>
+              $marca = new varTodas();
+              $marca = $row;
+              ?>
             <tr>
               <td class="text-center">
-                <a class="btn btn-success" href="<?php echo constant(
-                                                    'URL'
-                                                  ) .
-                                                    'nuevaRefaccion/verRefaccion/' .
-                                                    $marca->marca_id; ?>" role="button"><?php echo $marca->marca_nombre; ?></a>
+                <a class="btn btn-success" href="<?php echo constant('URL') .
+                    'nuevaRefaccion/verRefaccion/' .
+                    $marca->marca_id; ?>" role="button"><?php echo $marca->marca_nombre; ?></a>
               </td>
             <?php
           } ?>
