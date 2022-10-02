@@ -13,10 +13,20 @@ class consultarPP extends Controller
         $this->view->render('consultarPP/index');
     }
 
+    
+    function verMarca($param = null){
+        $idMarca = $param[0];
+        $varTodas = $this->model->getById($idMarca);
+        $this->view->varTodas = $varTodas;
+        $this->view->render('consultarPP/index');
+    }
+
     function DescargaPdf()
     {
+        session_start();
+        $datos[0] = $_SESSION['Num_Pedido'];
         require_once 'public/fpdf/fpdf.php';
-        $marcas = $this->model->get();
+        $marcas = $this->model->getById($datos[0]);
         $CotizacionC = $this->model->getCotizacionC();
         $pdf = new FPDF();
         $pdf->AddPage();
@@ -52,7 +62,7 @@ class consultarPP extends Controller
         $pdf->Cell(10, 7, utf8_decode($dats[2]), 0, 1, 'C');
         $pdf->SetXY(110, 45);
         $pdf->Cell(40, 7, utf8_decode('Correo :'), 0, 0, 'C');
-        $pdf->Cell(30, 7, utf8_decode($dats[3]), 0, 1, 'C');
+        $pdf->Cell(45, 7, utf8_decode($dats[3]), 0, 1, 'C');
         $pdf->Ln(8);
         $pdf->Cell(188, 6, utf8_decode('Detalle'), 1, 1, 'C');
         $pdf->Ln(3);
@@ -71,7 +81,7 @@ class consultarPP extends Controller
             $pdf->Cell(30, 7, utf8_decode($marca->vw_mano_obra), 1, 0, 'C');
             $pdf->Cell(30, 7, utf8_decode($marca->vw_totalParcial), 1, 1, 'C');
         }
-
-        $pdf->Output();
+        $pdf->Close();
+        $pdf->Output('I','Cotizacion');
     }
 }

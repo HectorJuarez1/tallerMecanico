@@ -39,8 +39,7 @@ class AgregarRF extends Controller
 
         ])) {
            
-            $this->redirect('AgregarRF',['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
-            //$this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
+            $this->redirect('AgregarRF',['success' => SuccessMessages::SUCCESS_CONFIRMATION_REGISTRADO]);
         } else {
             $this->redirect('nuevaCotizacion', ['error' => ErrorMessages::ERROR_NOREGISTRADO]);
         }

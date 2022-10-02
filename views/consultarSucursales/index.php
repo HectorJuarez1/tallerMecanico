@@ -11,11 +11,9 @@
 
 <body>
   <?php require 'views/header.php'; ?>
-<!-- <?php // var_dump($this->varTodas);?> -->
+
   <h1>SECCIÓN DE CONSULTA</h1>
   <hr class="my-4">
-  <div class="center"><?php echo $this->mensaje; ?></div>
-  
   <div class="card mb-4">
     <div class="card-header">
       <i class="fas fa-table me-1"></i>
