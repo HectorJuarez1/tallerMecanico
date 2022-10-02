@@ -78,8 +78,10 @@ $s = 0;
       </div>
     </div>
     <br>
-    <a href="<?php echo constant('URL') . 'consultarPP' ?>" class="btn btn-warning"></i>Detalle Pedido</a>
+    <a href="<?php echo constant('URL') . 'consultarPP' ?>" class="btn btn-warning">Detalle Pedido</a>
   </div>
+
+  
   <?php require 'views/footer.php'; ?>
 </body>
 </html>

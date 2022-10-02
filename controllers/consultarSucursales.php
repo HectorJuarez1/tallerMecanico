@@ -2,8 +2,6 @@
 class consultarSucursales extends Controller{
     function __construct(){
         parent::__construct();
-        $this->view->varTodas=[];
-        $this->view->mensaje = "";
     }
 
     function render(){

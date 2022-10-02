@@ -11,8 +11,6 @@ class NuevaMarcaModel extends Model{
             $query->execute(['mn' => $datos['NomMarca']]);
             return true;
         }catch(PDOException $e){
-           // echo $e->getMessage();
-                     // echo $e->getMessage();
             return false;
         }
      }

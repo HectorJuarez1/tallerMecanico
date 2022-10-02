@@ -8,26 +8,6 @@ class AgregarRFmodel extends Model
         parent::__construct();
     }
 
-
-    public function get()
-    {
-        $items = [];
-        try {
-            $query = $this->db->connect()->query("SELECT * FROM vw_detalle_cotizaciones_ref");
-            while ($row = $query->fetch()) {
-                $item = new varTodas();
-
-                $item->vw_refaccion_nombre = $row['refaccion_nombre'];
-                $item->vw_cantidad = $row['cantidad'];
-                $item->vw_precio = $row['precio'];
-                $item->vw_mano_obra = $row['mano_obra'];
-                array_push($items, $item);
-            }
-            return $items;
-        } catch (PDOException $e) {
-            return [];
-        }
-    }
     
     public function getByIdR($id){
         $item = new varTodas();

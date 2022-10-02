@@ -2,9 +2,8 @@
 class consultarMarca extends Controller{
     function __construct(){
         parent::__construct();
-        $this->view->varTodas=[];
     }
-    
+
     function render(){
         $marcas =$this->model->get();
         $this->view->varTodas=$marcas;
@@ -32,8 +31,6 @@ class consultarMarca extends Controller{
          }else{
              $this->redirect('consultarMarca', ['warning' => WarningMessages::ADVERTENCIA_NOREGISTRADO]);
          }
-
-
     }
 
     function eliminarMarca($param = null){

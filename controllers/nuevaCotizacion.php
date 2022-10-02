@@ -4,7 +4,6 @@ class nuevaCotizacion extends Controller
     function __construct()
     {
         parent::__construct();
-
     }
 
     function render(){
@@ -28,8 +27,6 @@ class nuevaCotizacion extends Controller
 
         session_start();
         $_SESSION["Num_Pedido"]=htmlentities($_POST['txt_NUM_cotizacion']);
-
-        
         $datos[0] = trim($_POST['Fecha']);
         $datos[1]  = trim($_POST['txt_NombreCliente']);
         $datos[2]  = trim($_POST['txt_Telefono']);

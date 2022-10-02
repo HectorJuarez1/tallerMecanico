@@ -4,7 +4,6 @@ class consultarPP extends Controller
     function __construct()
     {
         parent::__construct();
-
     }
 
     function render()
@@ -14,24 +13,16 @@ class consultarPP extends Controller
         $this->view->render('consultarPP/index');
     }
 
-
     function DescargaPdf()
     {
-
-
         require_once 'public/fpdf/fpdf.php';
         $marcas = $this->model->get();
         $CotizacionC = $this->model->getCotizacionC();
-
         $pdf = new FPDF();
         $pdf->AddPage();
         $pdf->SetTitle('Reporte');
         $pdf->SetFont('Arial', '', 12);
         $pdf->Image('public/img/logo2.jpg', 10, 8, 38);
-
-
-
-
         foreach ($CotizacionC as $row) {
             $marca = new varTodas();
             $marca = $row;
@@ -43,31 +34,26 @@ class consultarPP extends Controller
         }
 
         $pdf->SetXY(30, 15);
+        $pdf->Cell(0, 0, utf8_decode('TALLER MOTOR KING'), 0, 0, 'C');
+        $pdf->SetXY(28, 25);
         $pdf->Cell(0, 0, utf8_decode('COTIZACION DE REFACCIONES'), 0, 0, 'C');
-
-
         $pdf->Ln(10);
-        $pdf->SetXY(10, 25);
+        $pdf->SetXY(10, 31);
         $pdf->Cell(0, 0, utf8_decode('Folio :'), 0, 0, 'C');
-        $pdf->SetXY(113, 24);
-        $pdf->Cell(10, 2, utf8_decode($dats[4]), 0, 0, 'C');
-
-        $pdf->SetXY(50, 30);
+        $pdf->SetXY(113, 31);
+        $pdf->Cell(10, 0, utf8_decode($dats[4]), 0, 0, 'C');
+        $pdf->SetXY(50, 35);
         $pdf->Cell(30, 8, utf8_decode('Fecha :'), 0, 0, 'C');
         $pdf->Cell(10, 8, utf8_decode($dats[0]), 0, 0, 'C', 0);
         $pdf->Cell(60, 8, utf8_decode('Nombre Cliente :'), 0, 0, 'C');
         $pdf->Cell(5, 8, utf8_decode($dats[1]), 0, 0, 'C');
-
-
-        $pdf->SetXY(50, 40);
+        $pdf->SetXY(50, 45);
         $pdf->Cell(45, 7, utf8_decode('Num Telefono :'), 0, 0, 'C');
         $pdf->Cell(10, 7, utf8_decode($dats[2]), 0, 1, 'C');
-        $pdf->SetXY(110, 40);
+        $pdf->SetXY(110, 45);
         $pdf->Cell(40, 7, utf8_decode('Correo :'), 0, 0, 'C');
-        $pdf->Cell(20, 7, utf8_decode($dats[3]), 0, 1, 'C');
-
-        $pdf->Ln(10);
-
+        $pdf->Cell(30, 7, utf8_decode($dats[3]), 0, 1, 'C');
+        $pdf->Ln(8);
         $pdf->Cell(188, 6, utf8_decode('Detalle'), 1, 1, 'C');
         $pdf->Ln(3);
         $pdf->Cell(70, 7, utf8_decode('Refaccion'), 1, 0, 'C');

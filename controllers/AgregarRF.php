@@ -4,12 +4,12 @@ class AgregarRF extends Controller
     function __construct()
     {
         parent::__construct();
+       
     }
 
     function render()
     {
-        
-        $this->view->render('AgregarRF/index');
+       $this->view->render('AgregarRF/index');
     }
 
     function Buscar()

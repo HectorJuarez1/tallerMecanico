@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Marcas</title>
+  <title>DETALES DE LA COTIZACION</title>
 </head>
 
 <body>
   <?php require 'views/header.php'; ?>
   <div class="center"><?php $this->showMessages(); ?></div>
   <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">DETALES DE COTIZACION</h1>
+        <div class="col-lg-12">
+            <h1 class="page-header">DETALES DE LA COTIZACION</h1>
+        </div>
     </div>
-  </div>
-  <br>
-
+    <hr class="my-3 mb-5">
+  <a class="btn btn-danger mb-2" href="<?php echo constant('URL') . 'consultarPP/DescargaPdf' ?>" role="button"><i class="fa fa-file-pdf"></i></a>
   <div class="card mb-4">
     <div class="card-header">
       <i class="fas fa-table me-1"></i>
@@ -56,7 +56,7 @@
     </div>
   </div>
 
-  <a class="btn btn-success" href="<?php echo constant('URL') . 'consultarPP/DescargaPdf' ?>" role="button">Descargar PDF</a>
+ 
 
   <?php require 'views/footer.php'; ?>
 

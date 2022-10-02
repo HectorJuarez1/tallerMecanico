@@ -37,7 +37,6 @@ class nuevaProveedorRefaccionmodel extends Model{
                  $item->proveedor_nombre = $row['proveedor_nombre'];
                  array_push($items, $item);
              }
- 
              return $items;
          }catch(PDOException $e){
              return [];
@@ -69,7 +68,7 @@ class nuevaProveedorRefaccionmodel extends Model{
            $query->execute(['idf' => $datos['id_provedor'],'idp' => $datos['id_proveedor'],'fecha' => $datos['Fecha'],'precio' => $datos['Precio']]);
            return true;
        }catch(PDOException $e){
-          echo $e->getMessage();
+       //   echo $e->getMessage();
            return false;
        }
     }

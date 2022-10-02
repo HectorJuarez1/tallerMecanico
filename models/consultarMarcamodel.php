@@ -63,7 +63,6 @@ class ConsultarMarcaModel extends Model
             $query->execute(['id' => $id]);
             return true;
         } catch (PDOException $e) {
-            echo $e;
             return false;
         }
     }
