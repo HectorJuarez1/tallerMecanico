@@ -50,7 +50,9 @@ class nuevaCotizacion extends Controller
                                 'txt_DescripcionAuto' => $datos[7],
                                 'Num_Pedido'=>  $datos[8]
                                 ])) {
-                                                $this->redirect('AgregarRefacciones/Buscar');
+                                  //  $this->view->render('nuevaCotizacion/Buscar');
+                                       
+                                                $this->redirect('consultarBB');
             //$this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } 
         else {
@@ -58,16 +60,7 @@ class nuevaCotizacion extends Controller
         }
     }
 
-    public function AgregaR($param = null){
-        $marca = $param[0];
-    
-        $id_marca= $_POST['txt_cantidad_r'];
 
-        echo "hola ".$id_marca.$marca;
-
-    }
-
-    
 
 
 }

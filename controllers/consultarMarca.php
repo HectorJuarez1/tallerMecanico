@@ -45,48 +45,5 @@ class consultarMarca extends Controller{
          }
 
      }
-     function DescargaPdf(){
-
-
-        require_once 'public/fpdf/fpdf.php';
-
-
-        
-
-
-
- $marcas =$this->model->get();
-
-
-
-        $pdf = new FPDF();
-        $pdf->AddPage();
-        $pdf->SetTitle('Reporte');
-        $pdf->SetFont('Courier','',10);
-        $pdf->Cell(188,6,utf8_decode('Listado'),1,1,'C');
-        $pdf->Ln(3);
-        $pdf->Cell(10,5,utf8_decode('No'),1,0,'C');
-        $pdf->Cell(35,5,utf8_decode('Descripcion'),1,0,'C');
-        $pdf->Cell(35,5,utf8_decode('Descripcion'),1,0,'C');
-        $pdf->Cell(35,5,utf8_decode('Descripcion'),1,1,'C');
  
-        foreach ($marcas as $row) {
-            $marca = new varTodas();
-            $marca = $row;
-            $pdf->Cell(10,5,utf8_decode($marca->marca_id),1,0,'C');
-            $pdf->Cell(35,5,utf8_decode($marca->marca_nombre),1,0,'C');
-            $pdf->Cell(35,5,utf8_decode($marca->marca_nombre),1,0,'C');
-            $pdf->Cell(35,5,utf8_decode($marca->marca_nombre),1,1,'C');
-
-
-       
-           }
-
-
-      
-
-
-        $pdf->Output();
-
-    }
 }

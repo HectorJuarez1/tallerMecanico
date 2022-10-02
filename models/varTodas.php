@@ -32,6 +32,23 @@ class varTodas{
 
 
 
+    public $vw_refaccion_nombre;
+    public $vw_cantidad;
+    public $vw_precio;
+    public $vw_mano_obra;
+    public $vw_totalParcial;
+
+
+    public $cotizacion_fecha;
+
+    public $nombre_cliente;
+    public $numero_telefono;
+    public $correo_electronico;
+    public $num_pedido;
+
+
+
+
 
 
 

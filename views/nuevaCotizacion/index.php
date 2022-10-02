@@ -27,7 +27,7 @@
 
         <div class="col-md-3">
                 <label class="form-label">#</label>
-                <input type="number" class="form-control" name="txt_NUM_cotizacion">
+                <input type="number" class="form-control" name="txt_NUM_cotizacion" readonly value="<?php echo rand(10001, 20001); ?>" >
             </div>
             <div class="col-md-3">
                 <label class="form-label">Fecha</label>
@@ -76,10 +76,7 @@
 
 
         </form>
-    </div>
-        <a class="btn btn-primary" href="<?php echo constant('URL'); ?>nuevaCotizacion/AgregarProducto" role="button">Agregar Productos</a>
-
-        
+    </div>        
         <?php require 'views/footer.php'; ?>
 </body>
 

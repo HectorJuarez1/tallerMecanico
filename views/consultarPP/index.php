@@ -14,7 +14,7 @@
   <div class="center"><?php $this->showMessages(); ?></div>
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">SECCIÓN DE CONSULTA</h1>
+      <h1 class="page-header">DETALES DE COTIZACION</h1>
     </div>
   </div>
   <br>
@@ -29,9 +29,12 @@
       <table id="datatablesSimple">
         <thead>
           <tr>
-          <th class="text-center">Codigo Marca</th>
-                <th class="text-center">Nombre</th>
-                <th class="text-center">Acciones</th>
+          <th class="text-center">Refaccion</th>
+                <th class="text-center">Cantidad</th>
+                <th class="text-center">Precio</th>
+                <th class="text-center">Mano de Obra</th>
+                <th class="text-center">Total Parcial</th>
+
           </tr>
         </thead>
         <tbody>
@@ -40,17 +43,20 @@
             $marca = $row;
           ?>
             <tr>
-              <td class="text-center"><?php echo $marca->marca_id; ?></td>
-              <td class="text-center"><?php echo $marca->marca_nombre; ?></td>
-              <td class="text-center"><a href="<?php echo constant('URL') . 'consultarMarca/verMarca/' . $marca->marca_id ?>" class="btn btn-warning"><i class='fa fa-pencil' style='color: white'></i></a>
-                <a href="<?php echo constant('URL') . 'consultarMarca/eliminarMarca/' . $marca->marca_id ?>" class="btn btn-danger"><i class="fa  fa-trash"></i></a>
-              </td>
+              <td class="text-center"><?php echo $marca->vw_refaccion_nombre; ?></td>
+              <td class="text-center"><?php echo $marca->vw_cantidad; ?></td>
+              <td class="text-center"><?php echo $marca->vw_precio; ?></td>
+              <td class="text-center"><?php echo $marca->vw_mano_obra; ?></td>
+              <td class="text-center"><?php echo $marca->vw_totalParcial; ?></td>
+              
             </tr>
           <?php }?>
         </tbody>
       </table>
     </div>
   </div>
+
+  <a class="btn btn-success" href="<?php echo constant('URL') . 'consultarPP/DescargaPdf' ?>" role="button">Descargar PDF</a>
 
   <?php require 'views/footer.php'; ?>
 

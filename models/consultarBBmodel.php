@@ -1,7 +1,6 @@
 <?php
 include_once 'models/varTodas.php';
-
-class AgregarRefaccionesmodel extends Model
+class consultarBBmodel extends Model
 {
 
     public function __construct()
@@ -10,7 +9,26 @@ class AgregarRefaccionesmodel extends Model
     }
 
 
+    public function get()
+    {
+        $items = [];
+        try {
+            $query = $this->db->connect()->query("SELECT * FROM vw_detalle_cotizaciones_ref");
+            while ($row = $query->fetch()) {
+                $item = new varTodas();
 
+                $item->vw_refaccion_nombre = $row['refaccion_nombre'];
+                $item->vw_cantidad = $row['cantidad'];
+                $item->vw_precio = $row['precio'];
+                $item->vw_mano_obra = $row['mano_obra'];
+                array_push($items, $item);
+            }
+            return $items;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+    
     public function getByIdR($id){
         $item = new varTodas();
 
@@ -32,8 +50,6 @@ class AgregarRefaccionesmodel extends Model
         }
     }
 
-
-
     public function insert($datos)
     {
         try {
@@ -41,7 +57,7 @@ class AgregarRefaccionesmodel extends Model
                                                                          VALUES (:np,:cr,:can,:mo);');
             $query->execute([
                 'np' => $datos['Num_Pedido'],
-                'cr' => $datos['txt_NombreCliente'],
+                'cr' => $datos['txt_id_marca'],
                 'can' => $datos['txt_cantidad_R'],
                 'mo' => $datos['txt_mano_obra'],
 
@@ -53,5 +69,8 @@ class AgregarRefaccionesmodel extends Model
             return false;
         }
     }
-   
+
+
+    
+
 }
