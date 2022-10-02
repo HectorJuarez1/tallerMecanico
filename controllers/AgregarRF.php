@@ -1,17 +1,15 @@
 <?php
-class consultarBB extends Controller
+class AgregarRF extends Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->view->varTodas=[];
     }
 
     function render()
     {
-        $varTodas = $this->model->get();
-        $this->view->varTodas = $varTodas;
-        $this->view->render('consultarBB/index');
+        
+        $this->view->render('AgregarRF/index');
     }
 
     function Buscar()
@@ -20,7 +18,7 @@ class consultarBB extends Controller
                 $idRefaccion = $datos[0];
                 $Ref = $this->model->getByIdR($idRefaccion);
                 $this->view->varTodas = $Ref;
-                $this->view->render('consultarBB/index');
+                $this->view->render('AgregarRF/index');
 
     }
 
@@ -41,7 +39,7 @@ class consultarBB extends Controller
 
         ])) {
            
-            $this->redirect('consultarBB',['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
+            $this->redirect('AgregarRF',['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
             //$this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } else {
             $this->redirect('nuevaCotizacion', ['error' => ErrorMessages::ERROR_NOREGISTRADO]);

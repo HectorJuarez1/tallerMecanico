@@ -4,7 +4,7 @@ class consultarPP extends Controller
     function __construct()
     {
         parent::__construct();
-        $this->view->varTodas = [];
+
     }
 
     function render()

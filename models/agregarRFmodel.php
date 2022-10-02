@@ -1,6 +1,6 @@
 <?php
 include_once 'models/varTodas.php';
-class consultarBBmodel extends Model
+class AgregarRFmodel extends Model
 {
 
     public function __construct()

@@ -52,7 +52,7 @@ class nuevaCotizacion extends Controller
                                 ])) {
                                   //  $this->view->render('nuevaCotizacion/Buscar');
                                        
-                                                $this->redirect('consultarBB');
+                                                $this->redirect('AgregarRF');
             //$this->redirect('nuevaCotizacion', ['success' => SuccessMessages::SUCCESS_CONFIRMATION]);
         } 
         else {

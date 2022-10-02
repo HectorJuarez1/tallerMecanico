@@ -28,7 +28,7 @@ $s = 0;
   <hr class="my-3 mb-1">
   <div class="row">
 
-    <form class="row g-3" action="<?php echo constant('URL'); ?>ConsultarBB/Buscar" method="POST">
+    <form class="row g-3" action="<?php echo constant('URL'); ?>AgregarRF/Buscar" method="POST">
 
       <div class="input-group mb-4">
         <input type="text" class="form-control" placeholder="Codigo Refaccion" name="Codigo" required>
@@ -52,7 +52,7 @@ $s = 0;
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <form class="row g-2" action="<?php echo constant('URL'); ?>AgregarRefacciones/registrarRefacciones" method="POST">
+            <form class="row g-2" action="<?php echo constant('URL'); ?>AgregarRF/registrarRefacciones" method="POST">
               <input type="hidden" class="form-control" name="txt_id_marca" readonly value="<?php echo " " . $d; ?>">
               <p class="card-text">Nombre : <?php echo $a; ?></p>
               <p class="card-text"><?php echo " " .  $t; ?></p>
