@@ -46,6 +46,10 @@ class varTodas{
     public $correo_electronico;
     public $num_pedido;
 
+    public $Rcotizadas;
+    public $Tparcial;
+    public $TotalPar;
+
 
 
 

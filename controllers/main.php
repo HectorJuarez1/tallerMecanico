@@ -5,8 +5,12 @@ class Main extends Controller{
         parent::__construct();
     }
     function render(){
+        $Rcotizadas =$this->model->get();
+        $this->view->varTodas=$Rcotizadas;
         $this->view->render('main/index');
     }
+
+
 }
 
 ?>

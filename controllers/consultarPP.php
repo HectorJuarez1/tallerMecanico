@@ -8,15 +8,13 @@ class consultarPP extends Controller
 
     function render()
     {
-        $varTodas = $this->model->get();
-        $this->view->varTodas = $varTodas;
         $this->view->render('consultarPP/index');
     }
 
     
-    function verMarca($param = null){
-        $idMarca = $param[0];
-        $varTodas = $this->model->getById($idMarca);
+    function verDetalles($param = null){
+        $idDetalles = $param[0];
+        $varTodas = $this->model->getById($idDetalles);
         $this->view->varTodas = $varTodas;
         $this->view->render('consultarPP/index');
     }
@@ -28,6 +26,7 @@ class consultarPP extends Controller
         require_once 'public/fpdf/fpdf.php';
         $marcas = $this->model->getById($datos[0]);
         $CotizacionC = $this->model->getCotizacionC();
+        $TotalP = $this->model->getTotal($datos[0]);
         $pdf = new FPDF();
         $pdf->AddPage();
         $pdf->SetTitle('Reporte');
@@ -81,6 +80,19 @@ class consultarPP extends Controller
             $pdf->Cell(30, 7, utf8_decode($marca->vw_mano_obra), 1, 0, 'C');
             $pdf->Cell(30, 7, utf8_decode($marca->vw_totalParcial), 1, 1, 'C');
         }
+
+
+        foreach ($TotalP as $row) {
+            $marca = new varTodas();
+            $marca = $row;
+            $datsst[0] = $marca->TotalPar;
+
+        }
+
+        $pdf->SetXY(150, 270);
+        $pdf->Cell(10, 2, utf8_decode('Costo Total $'), 0, 0, 'C');
+        $pdf->Cell(40, 2, utf8_decode($datsst[0]), 0, 0, 'C');
+
         $pdf->Close();
         $pdf->Output('I','Cotizacion');
     }

@@ -78,7 +78,7 @@ $s = 0;
       </div>
     </div>
     <br>
-    <a href="<?php echo constant('URL') . 'consultarPP/verMarca/'.$numerodp ; ?>" class="btn btn-warning">Detalle Pedido</a>
+    <a href="<?php echo constant('URL') . 'consultarPP/verDetalles/'.$numerodp ; ?>" class="btn btn-warning">Detalle Pedido</a>
   </div>
 
   
